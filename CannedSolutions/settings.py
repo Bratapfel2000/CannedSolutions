@@ -23,10 +23,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'x(8xqq=7bl%f#3xd!)bxh6a+_r&grw9p=wlka8t)aj3%0rj38%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 #ALLOWED_HOSTS = ['bratapfel2k.pythonanywhere.com','localhost']
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['cannedsolutions.herokuapp.com']
 
 
 # Application definition
@@ -144,6 +144,7 @@ EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
 AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY= os.environ.get('AWS_SECRET_ACCESS_KEY')
+
 
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
