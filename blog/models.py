@@ -9,7 +9,6 @@ class Post(models.Model):
 	content = models.TextField()
 	date_posted = models.DateTimeField(default=timezone.now)
 	image = models.ImageField(default='post_default.jpg', upload_to='post_pics')
-	image2 = models.ImageField(default='post_default.jpg', upload_to='post_pics2')
 
 	#if user is deleted, post will also be deleted
 	author = models.ForeignKey(User, on_delete = models.CASCADE) 
