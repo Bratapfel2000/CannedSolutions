@@ -19,23 +19,6 @@
 	  </div>
 	</article>
 
-
-	<hr>
-	<!-- <a class="btn btn-default" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>  -->
-	 {% if user.is_authenticated %}
- {% endif %}
-{% for comment in post.comments.all %}
-    <div class="comment">
-        <div class="date">{{ comment.created_date }}</div>
-        <strong>{{ comment.author }}</strong>
-        <p>{{ comment.text|linebreaks }}</p>
-    </div>
-{% empty %}
-    <p>No comments here yet :(</p>
-{% endfor %}
-		<div class="text-right" >
-		  		<a class="btn btn-default" style="color:white;background:grey" href="{% url 'add_comment_to_post' pk=post.pk %}">make statement</a> 
-		</div>
-		
+	
 {% endblock content %}
 
