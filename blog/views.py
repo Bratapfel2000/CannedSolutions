@@ -10,8 +10,6 @@ from django.views.generic import (
 )
 from django.http import HttpResponse
 from .models import Post
-from .forms import CommentForm
-from django.shortcuts import redirect
 
 def home(request):
 	context = {
@@ -62,6 +60,7 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 		if self.request.user == post.author:
 			return True
 		return False
+
 
 class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 	model = Post
