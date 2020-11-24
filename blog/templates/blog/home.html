@@ -11,8 +11,8 @@
 		    <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
 		    <p class="article-content">{{ post.content }}</p>
 		     <img class="img-fluid" src="{{ post.image.url }}">
-		  </div>
-		 <!--  <img class ="mw-100 rounded article-img" src="{{ post.image.url }}"> -->
+		     
+
     <div>
       <br/>
     <h4>Comments</h4>
@@ -33,14 +33,13 @@
         {% endif %}
     </div>
               {% if user.is_authenticated %}
-              <div>
-                 <a href="{% url 'add_comment' post.id %}">Add Comment</a>
-              </div>
+      <div>
+            <a href="{% url 'add_comment' post.id %}">Add Comment</a>
+      </div>
               {% endif %}
-    </div>
-  </article>
-
-
+		  </div>
+		 <!--  <img class ="mw-100 rounded article-img" src="{{ post.image.url }}"> -->
+		</article>
 	{% endfor %}
 	{% if is_paginated %}
 
