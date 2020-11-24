@@ -9,7 +9,9 @@ from django.views.generic import (
 	DeleteView
 )
 from django.http import HttpResponse
-from .models import Post
+from .models import Post, CommentB
+from .forms import CommentForm
+from django.urls import reverse_lazy
 
 def home(request):
 	context = {
@@ -46,6 +48,20 @@ class PostCreateView(LoginRequiredMixin, CreateView):
 	def form_valid(self,form):
 		form.instance.author = self.request.user 
 		return super().form_valid(form)
+
+class AddCommentView(LoginRequiredMixin, CreateView):
+    model = CommentB
+    form_class = CommentForm
+    template_name = 'blog/add_comment.html'
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        form.instance.post_id = self.kwargs['pk']
+        return super().form_valid(form)
+
+    success_url = reverse_lazy('blog-home')
+
+    
 
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 	model = Post

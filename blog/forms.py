@@ -1,8 +1,9 @@
+from .models import CommentB, Post
 from django import forms
-from .models import Post, Comment
+
 
 class CommentForm(forms.ModelForm):
-
     class Meta:
-        model = Comment
-        fields = ('text',)
+        model = CommentB
+        fields = ('body',)
+
