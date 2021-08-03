@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = False
 
 #ALLOWED_HOSTS = ['bratapfel2k.pythonanywhere.com','localhost']
-ALLOWED_HOSTS = ['cannedsolutions.herokuapp.com']
+ALLOWED_HOSTS = ['cannedsolutions.herokuapp.com','localhost']
 
 
 # Application definition

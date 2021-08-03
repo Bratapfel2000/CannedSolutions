@@ -89,6 +89,9 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 def about(request):
 	return render(request, 'blog/about.html', {'title':'About'})
 
+def disclaimer(request):
+	return render(request, 'blog/disclaimer.html', {'title':'Disclaimer'})
+
 def contact(request):
 	return render(request, 'blog/contact.html', {'title':'Contact'})
 
